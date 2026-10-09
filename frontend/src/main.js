@@ -1,6 +1,6 @@
 import './plain.css';
 
-const API_URL = 'http://localhost:8080/api/conversiones';
+const API_URL = '/api/conversiones';
 const unitsByCategory = {
   longitud: [
     { id: 'm', label: 'Metros', symbol: 'm' },
