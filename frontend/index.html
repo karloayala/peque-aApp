@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Conversor simple de unidades." />
+    <title>Conversor de unidades</title>
+  </head>
+  <body>
+    <main class="page-shell">
+        <div class="workspace">
+          <section class="converter" aria-label="Conversor">
+            <div class="category-switch" role="group" aria-label="Categoría de unidades">
+              <button class="category-button is-active" data-category="longitud" type="button" aria-pressed="true">Longitud</button>
+              <button class="category-button" data-category="masa" type="button" aria-pressed="false">Masa</button>
+              <button class="category-button" data-category="temperatura" type="button" aria-pressed="false">Temperatura</button>
+            </div>
+
+            <form id="conversion-form">
+              <div class="conversion-grid">
+                <label class="unit-field" for="amount">
+                  <span class="field-label">CANTIDAD</span>
+                  <span class="amount-wrap"><input id="amount" name="amount" type="number" step="any" value="1" required /><span class="input-unit" id="from-symbol">km</span></span>
+                  <select id="from-unit" aria-label="Unidad de origen"></select>
+                </label>
+                <button class="swap-button" id="swap-button" type="button" aria-label="Intercambiar unidades" title="Intercambiar unidades"><span aria-hidden="true">⇄</span></button>
+                <div class="unit-field result-field" aria-live="polite" aria-atomic="true">
+                  <span class="field-label">RESULTADO</span>
+                  <div class="result-wrap"><output id="result">—</output><span class="input-unit" id="to-symbol">m</span></div>
+                  <select id="to-unit" aria-label="Unidad de destino"></select>
+                </div>
+              </div>
+              <div class="form-footer">
+                <p id="form-message" class="form-message" role="status">Ingresa una cantidad para empezar.</p>
+                <button class="convert-button" id="convert-button" type="submit"><span>Convertir</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+              </div>
+            </form>
+          </section>
+
+        </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
